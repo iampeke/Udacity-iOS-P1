@@ -28,31 +28,69 @@
                                     <action selector="onRecord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Vx8-ir-hRG"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q7N-uh-ZTx">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="154" y="358" width="94" height="21"/>
+                                </variation>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xrx-FV-f9j">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stopRecording">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onStopRecord:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="g32-Cd-5Vu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="tMM-5w-KUU" secondAttribute="centerX" id="BK6-jf-A0i"/>
+                            <constraint firstAttribute="centerX" secondItem="q7N-uh-ZTx" secondAttribute="centerX" constant="-1" id="CFm-Ee-7fk"/>
+                            <constraint firstAttribute="centerX" secondItem="Xrx-FV-f9j" secondAttribute="centerX" constant="-1" id="LEw-E2-A7b"/>
+                            <constraint firstItem="q7N-uh-ZTx" firstAttribute="top" secondItem="tMM-5w-KUU" secondAttribute="bottom" constant="8" id="cvB-BX-bvL"/>
                             <constraint firstAttribute="centerY" secondItem="tMM-5w-KUU" secondAttribute="centerY" id="fm8-SF-Qxo"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Xrx-FV-f9j" secondAttribute="bottom" constant="20" id="zyz-We-5xP"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="tMM-5w-KUU"/>
+                                <exclude reference="q7N-uh-ZTx"/>
+                                <exclude reference="Xrx-FV-f9j"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="BK6-jf-A0i"/>
                                 <exclude reference="fm8-SF-Qxo"/>
+                                <exclude reference="CFm-Ee-7fk"/>
+                                <exclude reference="cvB-BX-bvL"/>
+                                <exclude reference="LEw-E2-A7b"/>
+                                <exclude reference="zyz-We-5xP"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="tMM-5w-KUU"/>
+                                <include reference="q7N-uh-ZTx"/>
+                                <include reference="Xrx-FV-f9j"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="BK6-jf-A0i"/>
                                 <include reference="fm8-SF-Qxo"/>
+                                <include reference="CFm-Ee-7fk"/>
+                                <include reference="cvB-BX-bvL"/>
+                                <include reference="LEw-E2-A7b"/>
+                                <include reference="zyz-We-5xP"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="recordingInProgress" destination="q7N-uh-ZTx" id="6fV-au-FNd"/>
+                        <outlet property="stopRecordingButton" destination="Xrx-FV-f9j" id="p4Y-Sz-Niw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -60,5 +98,6 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="stopRecording" width="50" height="50"/>
     </resources>
 </document>

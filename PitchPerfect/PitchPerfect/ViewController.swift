@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var recordingInProgress: UILabel!
+    @IBOutlet weak var stopRecordingButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,11 +25,17 @@ class ViewController: UIViewController {
 
     // Listener for Clicking the Microphone Asset
     @IBAction func onRecord(sender: UIButton) {
-        //TODO: Show progress indicator - "Recording in Progress"
+        recordingInProgress.hidden = false
+        stopRecordingButton.hidden = false
         //TODO: Start the recording
         println("in onRecord")
         
     }
 
+    @IBAction func onStopRecord(sender: UIButton) {
+        recordingInProgress.hidden = true
+        stopRecordingButton.hidden = true
+    }
+    
 }
 
