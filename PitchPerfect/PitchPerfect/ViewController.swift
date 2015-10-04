@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // Listener for Clicking the Microphone Asset
+    @IBAction func onRecord(sender: UIButton) {
+        //TODO: Show progress indicator - "Recording in Progress"
+        //TODO: Start the recording
+        println("in onRecord")
+        
+    }
 
 }
 
