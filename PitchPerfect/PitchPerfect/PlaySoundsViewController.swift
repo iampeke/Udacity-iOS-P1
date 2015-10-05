@@ -20,6 +20,7 @@ class PlaySoundsViewController: UIViewController {
         if var path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3") {
             var fileUrl = NSURL(string: path)
             audioPlayer = AVAudioPlayer(contentsOfURL: fileUrl, error: nil)
+            audioPlayer.enableRate = true
         } else {
             println("the filePath is empty")
         }
@@ -42,7 +43,28 @@ class PlaySoundsViewController: UIViewController {
     */
 
     @IBAction func onPlaySlow(sender: UIButton) {
+        playSound(0.5, startFromTop:true)
+    }
+    
+    @IBAction func onPlayFast(sender: UIButton) {
+        playSound(1.5, startFromTop:true)
+    }
+    
+    @IBAction func onStop(sender: UIButton) {
+        audioStop()
+    }
+    
+    func playSound(speedOfPlay: Float, startFromTop: Bool) {
+        audioStop()
+        audioPlayer.rate = speedOfPlay
+        if (startFromTop) {
+            audioPlayer.currentTime = 0.0
+        }
         audioPlayer.play()
+    }
+    
+    func audioStop() {
+        audioPlayer.stop()
     }
     
 }
