@@ -39,7 +39,7 @@
 		6FBD9C161BC095FD009184F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FBD9C171BC095FD009184F3 /* PitchPerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchPerfectTests.swift; sourceTree = "<group>"; };
 		6FBD9C211BC0C441009184F3 /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
-		6FBD9C231BC0D333009184F3 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
+		6FBD9C231BC0D333009184F3 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = movie_quote.mp3; path = ../movie_quote.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,6 @@
 				6FBD9BFE1BC095FD009184F3 /* PitchPerfect */,
 				6FBD9C141BC095FD009184F3 /* PitchPerfectTests */,
 				6FBD9BFD1BC095FD009184F3 /* Products */,
-				6FBD9C231BC0D333009184F3 /* movie_quote.mp3 */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +95,7 @@
 		6FBD9BFF1BC095FD009184F3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6FBD9C231BC0D333009184F3 /* movie_quote.mp3 */,
 				6FBD9C001BC095FD009184F3 /* Info.plist */,
 			);
 			name = "Supporting Files";

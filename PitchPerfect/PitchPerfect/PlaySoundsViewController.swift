@@ -11,12 +11,18 @@ import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer:AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if var path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3") {
+            var fileUrl = NSURL(string: path)
+            audioPlayer = AVAudioPlayer(contentsOfURL: fileUrl, error: nil)
+        } else {
+            println("the filePath is empty")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,15 +42,6 @@ class PlaySoundsViewController: UIViewController {
     */
 
     @IBAction func onPlaySlow(sender: UIButton) {
-        var path = NSBundle.mainBundle().URLForResource("movie_quote", withExtension: "mp3")
-        
-        // Removed deprecated use of AVAudioSessionDelegate protocol
-        AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback, error: nil)
-        AVAudioSession.sharedInstance().setActive(true, error: nil)
-        
-        var error:NSError?
-        audioPlayer = AVAudioPlayer(contentsOfURL: path!, error: &error)
-        audioPlayer.prepareToPlay()
         audioPlayer.play()
     }
     
