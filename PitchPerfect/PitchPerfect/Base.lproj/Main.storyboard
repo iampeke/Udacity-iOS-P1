@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mV1-X3-kt8">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Record-->
@@ -99,17 +100,50 @@
             </objects>
             <point key="canvasLocation" x="1137" y="357"/>
         </scene>
-        <!--View Controller-->
+        <!--Play Sounds View Controller-->
         <scene sceneID="sR1-kn-jAB">
             <objects>
-                <viewController id="y8e-gU-BIM" sceneMemberID="viewController">
+                <viewController id="y8e-gU-BIM" customClass="PlaySoundsViewController" customModule="PitchPerfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZR9-Nk-ehd"/>
                         <viewControllerLayoutGuide type="bottom" id="0IX-RW-jjv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4bp-e0-WSe">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1iY-Kb-Ul2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="slow">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onPlaySlow:" destination="y8e-gU-BIM" eventType="touchUpInside" id="VWd-v2-yTt"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1iY-Kb-Ul2" firstAttribute="leading" secondItem="4bp-e0-WSe" secondAttribute="leadingMargin" constant="29" id="4jL-8f-RGa"/>
+                            <constraint firstItem="1iY-Kb-Ul2" firstAttribute="top" secondItem="ZR9-Nk-ehd" secondAttribute="bottom" constant="44" id="amg-3O-9VT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="1iY-Kb-Ul2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4jL-8f-RGa"/>
+                                <exclude reference="amg-3O-9VT"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="1iY-Kb-Ul2"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4jL-8f-RGa"/>
+                                <include reference="amg-3O-9VT"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVa-Tu-Nwy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -137,6 +171,7 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="slow" width="100" height="100"/>
         <image name="stopRecording" width="50" height="50"/>
     </resources>
 </document>
